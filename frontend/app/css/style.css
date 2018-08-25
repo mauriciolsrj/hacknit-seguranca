@@ -27,10 +27,37 @@ html {
 }
 img {
   max-width: none;
-  display: block;
-  width: 100%;
 }
+.logo-tit {
+    width: 50px;
+    padding-top:5px;
+    padding-left:5px;
+    margin-left:10px;
+    padding-right: 5px;
+    vertical-align: middle;
+    margin-left: 15px;
+}
+.logo-topo {
+    width: 30px;
+    margin-right:20px;
+    margin-top:10px;
+}
+.titulo {
+    color:#fff;
+    font-size:20px;
+    vertical-align: middle;
+    margin-left:10px;
 
+}
+.topo {
+    padding-bottom:5px;
+    background-color: #031377;
+}
+.ico-menu {
+    padding-right: 10px;
+    vertical-align: middle;
+    padding-bottom: 9px;
+}
 /* 1. Typography
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 body {
@@ -162,11 +189,14 @@ h1.title.big {
     border-color: #55a9dd !important;
 }
 .alert-color {
-    background-color: #ff1919 !important;
-    color:#fff;
+    border: 2px solid #eeb200 !important;
+}
+.alert-color:hover {
+    border: 2px solid #eeb200 !important;
+    background-color: #eeb200 !important;
 }
 .yellow-color {
-    background-color: #eeb200;
+    background-color: #eeb200 !important;
 }
 .blue-color {
     background-color: #55a9dd;
@@ -201,6 +231,9 @@ h1.title.big {
 .p-20 {
   padding: 20px !important;
 }
+.p-10 {
+    padding: 10px !important;
+  }
 .p-90 {
     padding-top: 90px !important;
     padding-left: 20px;
@@ -245,6 +278,8 @@ h1.title.big {
 .btn-large {
     background-color: transparent;
     color: #000; 
+    text-align: left;
+    border-radius: 5px;
 }
 .btn-large:hover {
     background-color: #061891;
@@ -253,6 +288,10 @@ h1.title.big {
 .btn-large2 {
     padding-top:15px;
     padding-bottom: 15px;
+    color:#fff;
+}
+.logo {
+    width:200px;
 }
 .float-none {
   float: none !important;
@@ -548,6 +587,7 @@ footer.page-footer .footer-copyright {
   margin-left: 16px;
   text-transform: none;
   letter-spacing: normal;
+  float: left;
 }
 
 /* Drawers */
@@ -565,8 +605,8 @@ footer.page-footer .footer-copyright {
     background-color: transparent;
 }
 .side-nav a {
-    height: 44px;
-    line-height: 44px;
+    height: 25px;
+    line-height: 28px;
     padding: 0;
 }
 .side-nav .no-child {
@@ -600,16 +640,18 @@ footer.page-footer .footer-copyright {
     overflow: auto;
 }
 .sidenav-header .nav-avatar {
-    display: flex;
     align-items: center;
+    text-align: center;
 }
 .sidenav-header .avatar {
-    margin: 20px;
-    height: 64px;
-    width: 64px;
+    height: 100px;
+    width: 100px;
+    border:1px solid #fff;
+    border-radius: 50px;
 }
 .sidenav-header .avatar-body {
     flex: 1;
+    margin-bottom: 20px;
 }
 .sidenav-header .avatar-body h3 {
     color: #fff;
@@ -673,6 +715,7 @@ footer.page-footer .footer-copyright {
 .side-nav a {
   color: #fff;
   font-size: 1.5rem;
+  display: inline;
 }
 .side-nav .collapsible-header.active:before {
     content: "";
@@ -692,6 +735,12 @@ footer.page-footer .footer-copyright {
     color: #fff;
     font-weight: 300;
     position: relative;
+}
+.side-nav .collapsible-header img {
+    width: 30px;
+    vertical-align: middle;
+    margin-right: 5px;
+    display: inline;
 }
 .side-nav .collapsible-header i {
     font-size: 24px;

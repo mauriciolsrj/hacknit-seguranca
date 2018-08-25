@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>Guarda Digital</title>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="x-ua-compatible">
+    <meta content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+
+    <!-- Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Raleway:300,400,700' rel='stylesheet' type='text/css'>
+
+    <!-- Icons -->
+    <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" media="all" rel="stylesheet" type="text/css">
+
+    <!-- Styles -->
+    <link href="css/keyframes.css" rel="stylesheet" type="text/css">
+    <link href="css/materialize.min.css" rel="stylesheet" type="text/css">
+    <link href="css/swiper.css" rel="stylesheet" type="text/css">
+    <link href="css/swipebox.min.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+
+    </script>
+</head>
+
+  <body>
+      <div id="main">
+          <!-- Main Container -->
+          <!-- Sidebar -->
+          <ul id="slide-out-left" class="side-nav primary-color collapsible">
+              <li>
+                  <div class="sidenav-header">
+
+
+
+                      <!-- Avatar -->
+                      <div class="nav-avatar">
+                          <img class="circle avatar" src="img/user5.jpg" alt="">
+                          <div class="avatar-body">
+                              <h3>Antonio</h3>
+                              <p>255.155.653-80</p>
+                          </div>
+                      </div>
+                  </div>
+              </li>
+
+              <!-- Menu -->
+              <li>
+                  <div class="collapsible-header red-title">
+                      <i class="ion-ios-camera-outline"></i> Alerta!
+                  </div>
+
+              </li>
+              <li>
+                  <div class="collapsible-header">
+                      <i class="ion-ios-home-outline"></i> Nova Ocorrência
+                  </div>
+
+              </li>
+              <li>
+                  <div class="collapsible-header">
+                      <i class="ion-ios-browsers-outline"></i> Infrações
+                  </div>
+
+              </li>
+              <li>
+                  <div class="collapsible-header">
+                      <i class="ion-ios-list-outline"></i> Busca Ambulantes
+                  </div>
+
+              </li>
+              <li>
+                  <div class="collapsible-header">
+                      <i class="ion-ios-keypad-outline"></i> Busca Ficha
+                  </div>
+
+              </li>
+              <li>
+                  <div class="collapsible-header">
+                      <i class="ion-ios-keypad-outline"></i> Legislação
+                  </div>
+
+              </li>
+
+          </ul>
+          <!-- End of Sidebars -->
+          <!-- Toolbar -->
+          <div id="toolbar" class="primary-color">
+              <div class="open-left" id="open-left" data-activates="slide-out-left">
+                  <i class="ion-android-menu"></i>
+              </div>
+          </div>
+          <!-- End of Toolbar -->
+          <!-- Page Contents -->
+          <div class="page animated fadeinright">
+
+              <!-- Form Inputs -->
+              <div class="form-inputs p-20">
+                  <h4 class="center">Registro de nova ocorrência</h4>
+
+
+                  <h6 class="shipping-address center">
+                      Informações do Ocorrido</h4>
+                      <div>
+                          <div class="input-field">
+                              <input id="data" name="data" type="text" class="validate">
+                              <label for="data">Data do Fato</label>
+                          </div>
+                          <div class="input-field">
+                              <input id="local" name="local" type="text" class="validate">
+                              <label for="local">Local do Fato</label>
+                          </div>
+                          <div class="input-field">
+                              <select class="browser-default" name="ocorrencia" id="ocorrencia"></select>
+                          </div>
+                          <div class=" = " input-field">
+                              <select class="browser-default" name="TipoOcorrencia" id="TipoOcorrencia"></select>
+                          </div>
+                      </div>
+                      <h6 class="shipping-address center">
+                          Qualificação dos envolvidos (Vítima/Testemunha/Suspeito/Outros)</h4>
+                          <div>
+                              <div class="input-field">
+                                  <input id="name" name="name" type="text" class="validate">
+                                  <label for="name">Nome Completo</label>
+                              </div>
+                              <div class="input-field">
+                                  <input id="age" name="age" type="text" class="validate">
+                                  <label for="age">Idade</label>
+                              </div>
+                          </div>
+                          <div class="input-field">
+                              <input id="address" name="address" type="text">
+                              <label for="address">Endereço Residencial Completo</label>
+                          </div>
+                          <div class="input-field">
+                              <input id="rg" name="rg" type="text" class="validate">
+                              <label for="rg">Identidade</label>
+                          </div>
+                          <select class="browser-default" name="qualidade" id="qualidade">
+                              <option value="" disabled selected>Qualidade do envolvido (selecione)</option>
+                              <option value="1">Vítima</option>
+                              <option value="2">Acusado</option>
+                              <option value="3">Testemunha</option>
+
+                          </select>
+
+                          <a class="waves-effect waves-light btn-large border-color block" href="#" id="addEnvolvido"  onclick="adicionarEnvolvido();">Adicionar envolvido</a>
+                          <div id="receberEnvolvido">
+                          </div>
+              </div>
+
+              <h6 class="shipping-address center">
+                  Relatório (Histórico da Ocorrência)</h4>
+                  <div class="p-10">
+                      <div class="input-field p-10">
+                          <textarea class="materialize-textarea" id="descricao" name="descricao"></textarea>
+                          <label for="textarea1">Descreva aqui o ocorrido</label>
+                      </div>
+                  </div>
+
+                  <h6 class="shipping-address center">
+                      Da Ocorrência</h4>
+                      <div class="p-20">
+                          <div class="input-field">
+                              <input id="gm2" type="text" name="gm2" class="validate">
+                              <label for="gm2">Guarda Municipal 2 - Número da Matrícula</label>
+                          </div>
+                          <a class="waves-effect waves-light btn-large border-color block" href="#" id="addGuarda" onclick="buscarGuarda()">Adicionar guarda</a>
+                          <div id="receberGuarda">
+                          </div>
+
+                      </div>
+                      <h6 class="shipping-address center">
+                          Situação</h4>
+                          <div class="p-20">
+                              <p class="remember animated bouncein delay-6">
+                                  <input type="checkbox" id="encerrado" name="encerrado" onclick="capturarChecked(1);" />
+                                  <label for="encerrado">Encerrado no local</label>
+                              </p>
+                              <p class="remember animated bouncein delay-6">
+                                  <input type="checkbox" id="conduzido" name="conduzido" onclick="capturarChecked(2);" />
+                                  <label for="conduzido">Conduzido à DP</label>
+                              </p>
+                              <p class="remember animated bouncein delay-6">
+                                  <input type="checkbox" id="apreensao" name="apreensao" onclick="capturarChecked(3);" />
+                                  <label for="apreensao">Apreensão de Material</label>
+                              </p>
+                              <p class="remember animated bouncein delay-6" onclick="capturarChecked(4);">
+                                  <input type="checkbox" id="RO" name="RO" />
+                                  <label for="RO">RO</label>
+                              </p>
+                              <p class="remember animated bouncein delay-6" onclick="capturarChecked(5);">
+                                  <input type="checkbox" id="flag" name="flag" />
+                                  <label for="flag">Flagrante</label>
+                              </p>
+                              <p class="remember animated bouncein delay-6" onclick="capturarChecked(6);">
+                                  <input type="checkbox" id="lacre" name="lacre" />
+                                  <label for="lacre">Lacre</label>
+                              </p>
+                              <div class="input-field">
+                                  <input id="horainicio" type="text" name="horainicio" class="validate">
+                                  <label for="horainicio">Horário Início</label>
+                              </div>
+                              <div class="input-field">
+                                  <input id="horaterm" type="text" name="horaterm" class="validate">
+                                  <label for="horaterm">Horário Término</label>
+                              </div>
+
+                          </div>
+                          <h6 class="shipping-address center">
+                              Anexar imagens/vídeos a ocorrência</h4>
+                              <div class="p-20">
+                                  <div class="input-field">
+                                      <input type="file" name="anexos" />
+
+                                      <div class="input-field">
+                                          <i class="ion-ios-email-outline prefix"></i>
+                                          <input id="email" type="email" name="email" class="validate">
+                                          <label for="email" data-error="wrong" data-success="right">Enviar cópia para e-mail</label>
+                                      </div>
+                                  </div>
+                                  <a class="waves-effect waves-light btn-large yellow-color block" href="#" id="save">Salvar Ocorrência</a>
+
+
+                              </div>
+
+          </div>
+          <!-- End of Page Contents -->
+
+      </div><!-- End of Main Container -->
+
+      <script src="js/jquery-2.1.0.min.js"></script>
+      <script src="js/jquery.swipebox.min.js"></script>
+      <script src="js/materialize.min.js"></script>
+      <script src="js/swiper.min.js"></script>
+      <script src="js/jquery.mixitup.min.js"></script>
+      <script src="js/masonry.min.js"></script>
+      <script src="js/chart.min.js"></script>
+      <script src="js/functions.js"></script>
+
+      <script src="verificar.js"></script>
+      <script>
+          dataAtual();
+      </script>
+  </body>
+</html>
