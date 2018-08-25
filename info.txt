@@ -1,2 +1,0 @@
-Os arquivos referenet as bases da Segurança pública (BoletimOcorrenciaGCM.csv e BoletimOcorrenciaGCM.xlsx) 
-diferenciam se apenas no formato
