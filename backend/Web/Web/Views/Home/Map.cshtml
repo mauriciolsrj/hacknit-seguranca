@@ -4,6 +4,10 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<p>
+    filtros
+</p>
+
 <div id="map-canvas" style="width: 100%; height: 660px;"></div>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgD8wlqFoNS8SsupBFHR-9LzIxCrfSVuo&amp;sensor=false"></script>
@@ -71,11 +75,12 @@
             console.info(i);
             var latlng = new google.maps.LatLng(markersData[i].latitude, markersData[i].longitude);
             var ocorrencia = markersData[i].ocorrencia;
+            var id = markersData[i].id;
             var tipo = markersData[i].tipo;
             var inicio = markersData[i].inicio;
             var fim = markersData[i].fim;
                                   
-            createMarker(latlng, ocorrencia, tipo, inicio, '', fim);
+            createMarker(latlng, ocorrencia, tipo, inicio, id, fim);
             
             // Os valores de latitude e longitude do marcador são adicionados à
             // variável bounds
@@ -89,7 +94,7 @@
     }
 
     // Função que cria os marcadores e define o conteúdo de cada Info Window.
-    function createMarker(latlng, ocorrencia, tipo, inicio, foto, fim) {
+    function createMarker(latlng, ocorrencia, tipo, inicio, id, fim) {
         var marker = new google.maps.Marker({
             map: map,
             position: latlng,

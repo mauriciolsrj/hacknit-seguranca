@@ -27,3 +27,4 @@ backend/Web/Web/bin/
 *.cache
 backend/Web/Web/obj/
 backend/Web/GD.Infrastructure.Context.EF/obj/
+backend/Web/GD.Infrastructure.Context.EF/bin/Debug/EntityFramework.SqlServer.xml
