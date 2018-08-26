@@ -1,6 +1,6 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-br">
-  <head>
+<head>
     <title>Guarda Digital</title>
     <meta charset="utf-8">
     <meta content="IE=edge" http-equiv="x-ua-compatible">
@@ -20,50 +20,73 @@
     <link href="css/swiper.css" rel="stylesheet" type="text/css">
     <link href="css/swipebox.min.css" rel="stylesheet" type="text/css">
     <link href="css/style.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery-2.1.0.min.js"></script>
 
-    </script>
 </head>
 
-  <body>
-    <div id="main"> <!-- Main Container -->
-
-  
-
-      <!-- Toolbar -->
-      <div id="toolbar" class="primary-color">
-        <div class="title center">Adicionar QR Code</div>
-         </div>
-      </div>
-      <!-- End of Toolbar -->
-      
-      <!-- Page Contents -->
-      <div class="page fullscreen valign-wrapper animated fadeinright">
+<body>
+    <div id="main">
+        <!-- Main Container -->
+        <!-- Toolbar -->
+        <div id="toolbar" class="primary-color">
+            <div class="title center">Adicionar QR Code</div>
+        </div>
+    </div>
+    <!-- End of Toolbar -->
+    <!-- Page Contents -->
+    <div class="page fullscreen valign-wrapper animated fadeinright">
         <div class="valign center-align w-100">
-         <div class="input-field">
-            <input type="file" name="anexos" />
-          </div>
-          <br>
-          <br>
-          <br>
-          <br>
-          <a class="waves-effect waves-light btn-large primary-color block m-20 animated bouncein delay-4" href="index.html" style="text-align: center;">Voltar</a> 
+            <div class="input-field">
+                <input type="file" id="fileUpload" name="fileUpload" />
+                <input type="button" id="btnEnviar" value="Enviar" />
+
+
+                 <script>
+                     $(function () {
+
+                         var form;
+                         $('#fileUpload').change(function (event) {
+                             form = new FormData();
+                             form.append('files', event.target.files[0]);
+                         });
+
+                         $('#btnEnviar').click(function () {
+                             $.ajax({
+                                 //url: 'http://api.guarda.digital/api/CrachaDigital', 
+                                 url: 'http://localhost:5000/api/CrachaDigital',
+                                 data: form,
+                                 processData: false,
+                                 contentType: false,
+                                 type: 'POST',
+                                 success: function (data) {
+                                     alert(data);
+                                 }
+                             });
+                         });
+                     });
+                 </script>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <a class="waves-effect waves-light btn-large primary-color block m-20 animated bouncein delay-4" href="index.html" style="text-align: center;">Voltar</a>
         </div>
 
-      </div> 
-      <!-- End of Page Contents -->
-
+    </div>
+    <!-- End of Page Contents -->
     </div><!-- End of Main Container -->
-    
-    
-    <script src="js/jquery-2.1.0.min.js"></script>
-    <script src="js/jquery.swipebox.min.js"></script>   
-    <script src="js/materialize.min.js"></script> 
-    <script src="js/swiper.min.js"></script>  
+
+
+
+    <script src="js/jquery.swipebox.min.js"></script>
+    <script src="js/materialize.min.js"></script>
+    <script src="js/swiper.min.js"></script>
     <script src="js/jquery.mixitup.min.js"></script>
     <script src="js/masonry.min.js"></script>
     <script src="js/chart.min.js"></script>
     <script src="js/functions.js"></script>
 
     <script src="verificar.js"></script>
-  </body>
+</body>
 </html>

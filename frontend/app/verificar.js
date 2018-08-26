@@ -22,9 +22,9 @@ $('#save').click(function () {
                 "inicio": $('#data').val(),
                 "endereco": $('#address').val(),
                 "historicoOcorrencia": $('#descricao').val(),
-                "encerradoNoLocal": checkedEncerrado,
-                "conduzidoAdp": checkedConduzido,
-                "apreensaoMaterial": checkedApreensao,
+                "encerradoNoLocal": true,
+                "conduzidoAdp": true,
+                "apreensaoMaterial": true,
                 "fim": $('#horaterm').val(),
                 "ro": 0,
                 "flagrante": checkedFlagrante,
@@ -42,14 +42,14 @@ $('#save').click(function () {
 
         $.ajax({
             type: "POST",
+            contentType: "application/json; charset=utf-8",
             url: 'http://api.guarda.digital/api/RegistroOcorrencia',
-            data: envelope,
+            data: JSON.stringify(envelope),
             success: function (data) {
                 console.info(data);
                 vazioOcorrencia();
             },
-            dataType: 'json',
-            contentType: 'application/json',
+            dataType: 'json',           
         });
 
         checkedEncerrado = false;
