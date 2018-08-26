@@ -59,3 +59,9 @@ Maurício Santos - Desenvolvedor
 
 **Licença Livre!**
 
+![Georreferenciamento](http://guarda.digital/prints/mapa2.png)
+![Georreferenciamento](http://guarda.digital/prints/mapa1.png)
+![APP](http://guarda.digital/prints/app1.png)
+![APP](http://guarda.digital/prints/app2.png)
+![APP](http://guarda.digital/prints/site.png)
+![APP](http://guarda.digital/prints/API.png)
