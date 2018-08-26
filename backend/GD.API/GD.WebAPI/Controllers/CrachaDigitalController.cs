@@ -22,18 +22,17 @@ namespace GD.API.Controllers
                 {
                     string filename = ContentDispositionHeaderValue.Parse(source.ContentDisposition).FileName.Trim('"');
 
-                    var name = Guid.NewGuid().ToString().Replace("-", "");
-                    var extensao = Path.GetExtension(filename);
+                    //var name = Guid.NewGuid().ToString().Replace("-", "");
+                    //var extensao = Path.GetExtension(filename);
+                    //filename = Path.Combine(name, extensao);
 
-                    filename = Path.Combine(name, extensao);
                     filename = this.EnsureCorrectFilename(filename);
                     var tempFileName = filename;
 
                     msg = filename;
                     using (FileStream output = System.IO.File.Create(this.GetPathAndFilename(filename)))
                         source.CopyTo(output);
-
-                    tempFileName = "qrcode.png";
+                                                
                     var urlQRCode = string.Format("http://api.qrserver.com/v1/read-qr-code/?fileurl=http://api.guarda.digital/uploads/{0}", tempFileName);
 
                     using (var client = new WebClient())
@@ -62,8 +61,7 @@ namespace GD.API.Controllers
 
         private string GetPathAndFilename(string filename)
         {
-            return Path.Combine(@"C:\Publish\log\", @"uploads\", filename);
-            //return Path.Combine(@"D:\home\site\wwwroot\", @"uploads\", filename);
+            return Path.Combine(@"D:\home\site\wwwroot\", @"uploads\", filename);
         }
     }
 }

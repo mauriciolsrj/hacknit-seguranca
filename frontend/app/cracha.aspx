@@ -37,10 +37,10 @@
 
             <!-- Avatar -->
             <div class="nav-avatar">
-              <img class="circle avatar" src="img/mauricio.png" alt="foto do guarda">
+              <img class="circle avatar" src="<%=Request.QueryString("img").ToString() %>" width="400" alt="foto do guarda">
               <div class="avatar-body">
-                <h3>Antonio Luis</h3>
-                <p>255.155.653-80</p>
+                <h3><%=Request.QueryString("nome").ToString() %></h3>
+                <p><%=Request.QueryString("inscricao").ToString() %></p>
               </div>
             </div>
           </div>
@@ -84,11 +84,19 @@
       <div class="page fullscreen valign-wrapper animated fadeinright">
         
         <div class="valign center-align w-100">
+<<<<<<< HEAD:frontend/app/dadosUsuario.html
           <img src="" alt="ImagemUsuario">
           <h3 class="m-0"><strong>Antonio Luis</strong></h3>
           <h6 class="m-0">Validade: 02/10/2020</h6>
           <h6 class="m-0">Endereço: Rua das Esmeraldas LT 42.</h6>
           <h6 class="m-0">O que pode vender: Frutas, Verduras e Legumes.</h6>
+=======
+         <img src='<%=Request.QueryString("img").ToString()%>' width="700">
+          <h3 class="m-0"><strong><%=Request.QueryString("nome").ToString()%></strong></h3>
+          <h6 class="m-0">Validade: <%=Request.QueryString("validade").ToString() %></h6>
+          <h6 class="m-0">Endereço: <%=Request.QueryString("endereco").ToString() %></h6>
+          <h6 class="m-0">O que pode vender: <%=Request.QueryString("poder").ToString() %></h6>
+>>>>>>> 84c6a7b4271166645758c3ab39aa587630b68a77:frontend/app/cracha.aspx
           <br>
           <br>
           <br>

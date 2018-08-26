@@ -22,7 +22,7 @@ namespace GD.API.Controllers
 
             using (var db = new GuardaDigitalContext())
             {
-                IQueryable<RelatorioGeoOcorrencias> query = db.RelatorioGeoOcorrencias;
+                IQueryable<RelatorioGeoOcorrencias> query = db.RelatorioGeoOcorrencias.Where(p=> p.Latitude.HasValue && p.Latitude!= 0 && p.Longitude.HasValue && p.Longitude!=0);
 
                 if (ocorrencia != 0)
                     query = query.Where(p => p.IdOcorrencia == ocorrencia);

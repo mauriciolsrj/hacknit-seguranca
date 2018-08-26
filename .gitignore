@@ -18,3 +18,13 @@ backend/GD.API/GD.WebAPI/obj/
 backend/GD.API/GD.WebAPI/Properties/PublishProfiles
 backend/GD.API/GD.WebAPI/appsettings.Development.json
 backend/GD.API/GD.WebAPI/Properties/launchSettings.json
+backend/packages/
+backend/Web/GD.Entity/obj/
+backend/Web/GD.Entity/bin/
+backend/Web/packages/
+backend/Web/Web/bin/
+*.out
+*.cache
+backend/Web/Web/obj/
+backend/Web/GD.Infrastructure.Context.EF/obj/
+backend/Web/GD.Infrastructure.Context.EF/bin/Debug/EntityFramework.SqlServer.xml
