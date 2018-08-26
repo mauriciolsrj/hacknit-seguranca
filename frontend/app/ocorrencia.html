@@ -2,6 +2,7 @@
 <html lang="pt-br">
   <head>
     <title>Guarda Digital</title>
+    <meta charset="utf-8">
     <meta content="IE=edge" http-equiv="x-ua-compatible">
     <meta content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" name="viewport">
     <meta content="yes" name="apple-mobile-web-app-capable">
@@ -23,73 +24,61 @@
 </head>
 
   <body>
-      <div id="main">
-          <!-- Main Container -->
-          <!-- Sidebar -->
-          <ul id="slide-out-left" class="side-nav primary-color collapsible">
-              <li>
-                  <div class="sidenav-header">
+    <div id="main"> <!-- Main Container -->
 
+      <!-- Sidebar -->
+      <ul id="slide-out-left" class="side-nav primary-color collapsible">
+        <li>
+          <div class="sidenav-header">
 
+          <p class="topo"> <img src="img/logo.png" class="logo-tit" /> <span class="titulo"> Guarda Digital</span></p>
 
-                      <!-- Avatar -->
-                      <div class="nav-avatar">
-                          <img class="circle avatar" src="img/user5.jpg" alt="">
-                          <div class="avatar-body">
-                              <h3>Antonio</h3>
-                              <p>255.155.653-80</p>
-                          </div>
-                      </div>
-                  </div>
-              </li>
+           
 
-              <!-- Menu -->
-              <li>
-                  <div class="collapsible-header red-title">
-                      <i class="ion-ios-camera-outline"></i> Alerta!
-                  </div>
-
-              </li>
-              <li>
-                  <div class="collapsible-header">
-                      <i class="ion-ios-home-outline"></i> Nova Ocorrência
-                  </div>
-
-              </li>
-              <li>
-                  <div class="collapsible-header">
-                      <i class="ion-ios-browsers-outline"></i> Infrações
-                  </div>
-
-              </li>
-              <li>
-                  <div class="collapsible-header">
-                      <i class="ion-ios-list-outline"></i> Busca Ambulantes
-                  </div>
-
-              </li>
-              <li>
-                  <div class="collapsible-header">
-                      <i class="ion-ios-keypad-outline"></i> Busca Ficha
-                  </div>
-
-              </li>
-              <li>
-                  <div class="collapsible-header">
-                      <i class="ion-ios-keypad-outline"></i> Legislação
-                  </div>
-
-              </li>
-
-          </ul>
-          <!-- End of Sidebars -->
-          <!-- Toolbar -->
-          <div id="toolbar" class="primary-color">
-              <div class="open-left" id="open-left" data-activates="slide-out-left">
-                  <i class="ion-android-menu"></i>
+            <!-- Avatar -->
+            <div class="nav-avatar">
+              <img class="circle avatar" src="img/mauricio.png" alt="foto do guarda">
+              <div class="avatar-body">
+                <h3>Antonio Luis</h3>
+                <p>255.155.653-80</p>
               </div>
+            </div>
           </div>
-          <!-- End of Toolbar -->
+        </li>
+
+        <!-- Menu -->
+        <li>
+          <div class="collapsible-header">
+              <img src="img/nova.png" /> <a href="ocorrencia.html">Nova Ocorrência</a>
+          </div>
+          
+        </li>
+       
+        <li>
+          <div class="collapsible-header">
+            <img src="img/verifica.png" /> <a href="modalImagem.html">Verificar Vendedor </a>
+          </div>
+          
+        </li>
+       
+       
+        <li>
+          <div class="collapsible-header">
+              <img src="img/lei.png" /> <a href="leis.html">Legislação</a>   </div>
+          
+        </li>
+        
+          </ul>
+      <!-- End of Sidebars -->
+
+      <!-- Toolbar -->
+      <div id="toolbar" class="primary-color">
+        <div class="open-left" id="open-left" data-activates="slide-out-left">
+          <i class="ion-android-menu"></i>
+        </div>
+        <div><img src="img/logo.png" class="logo-topo" style="float:right;" /></div>
+      </div>
+      <!-- End of Toolbar -->
           <!-- Page Contents -->
           <div class="page animated fadeinright">
 
@@ -112,7 +101,7 @@
                           <div class="input-field">
                               <select class="browser-default" name="ocorrencia" id="ocorrencia"></select>
                           </div>
-                          <div class=" = " input-field">
+                          <div class="input-field">
                               <select class="browser-default" name="TipoOcorrencia" id="TipoOcorrencia"></select>
                           </div>
                       </div>
