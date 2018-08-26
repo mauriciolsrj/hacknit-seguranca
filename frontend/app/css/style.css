@@ -674,7 +674,13 @@ footer.page-footer .footer-copyright {
     color: #fff;
     margin-right: 18px;
 }
-
+.btn-upload {
+    border-color: #061891;
+    color:#666;
+    border-radius: 5px;
+    border:1px solid #061891;
+    padding:5px;
+}
 /* Searchbar */
 .searchnav {
   height: 36px;
