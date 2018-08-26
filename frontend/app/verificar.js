@@ -8,58 +8,57 @@ var checkedLacre = false;
 var arrayGm2 = new Array();
 var envolvidoArray = new Array();
 
-$('#save').click(function()
-{
-	if($('#data').val() == "" || $('#local').val() == ""|| $('#ocorrencia :selected').text == "" || $('#TipoOcorrencia :selected').text == "")
-		alert("Preencha todos os campos!");
+$('#save').click(function () {
+    if ($('#data').val() == "" || $('#local').val() == "" || $('#ocorrencia :selected').text == "" || $('#TipoOcorrencia :selected').text == "")
+        alert("Preencha todos os campos!");
 
-	else
-	{	
-		//console.info('https://app920180731013336.azurewebsites.net/api/Ocorrencia');
-		var envelope = {
-		  "registro": {
-		    "idOcorrencia": parseInt($('#ocorrencia').val()),
-		    "idTipoOcorrencia": parseInt($('#TipoOcorrencia').val()),
-		    "latitude": 0,
-		    "longitude": 0,
-		    "inicio": $('#data').val(),
-		    "endereco": $('#address').val(),
-		    "historicoOcorrencia": $('#descricao').val(),
-		    "encerradoNoLocal": checkedEncerrado,
-		    "conduzidoAdp": checkedConduzido,
-		    "apreensaoMaterial": checkedApreensao,
-		    "fim": $('#horaterm').val(),
-		    "ro": checkedRO,
-		    "flagrante": checkedFlagrante,
-		    "lacre": checkedLacre
-		  },
-		  "envolvidos": [
-		    envolvidoArray
-		  ],
-		  "matriculas": [
-		    arrayGm2
-		  ]
-		};
+    else {
+        var envelope = {
+            "registro": {
+                "idOcorrencia": parseInt($('#ocorrencia').val()),
+                "idTipoOcorrencia": parseInt($('#TipoOcorrencia').val()),
+                "latitude": 0,
+                "longitude": 0,
+                "inicio": $('#data').val(),
+                "endereco": $('#address').val(),
+                "historicoOcorrencia": $('#descricao').val(),
+                "encerradoNoLocal": checkedEncerrado,
+                "conduzidoAdp": checkedConduzido,
+                "apreensaoMaterial": checkedApreensao,
+                "fim": $('#horaterm').val(),
+                "ro": 0,
+                "flagrante": checkedFlagrante,
+                "lacre": 0
+            },
+            "envolvidos":
+                envolvidoArray
+            ,
+            "matriculas":
+                arrayGm2
 
-		$.ajax({
-		 type: "POST",
-		 url: 'http://api.guarda.digital/api/RegistroOcorrencia',
-		 data: envelope,
-		 success: function(data)
-		 {
-		 	console.info(data);
-		 	vazioOcorrencia();
-		 },
-		 dataType: "json"
-		});
+        };
 
-		checkedEncerrado = false;
-		checkedConduzido = false;
-		checkedApreensao = false;
-		checkedRO = false;
-		checkedFlagrante = false;
-		checkedLacre = false;
-	}
+        console.info(envelope);
+
+        $.ajax({
+            type: "POST",
+            url: 'http://api.guarda.digital/api/RegistroOcorrencia',
+            data: envelope,
+            success: function (data) {
+                console.info(data);
+                vazioOcorrencia();
+            },
+            dataType: 'json',
+            contentType: 'application/json',
+        });
+
+        checkedEncerrado = false;
+        checkedConduzido = false;
+        checkedApreensao = false;
+        checkedRO = 0;
+        checkedFlagrante = false;
+        checkedLacre = 0;
+    }
 });
 
 /*$('#login').click(function()
@@ -72,150 +71,133 @@ $('#save').click(function()
 });*/
 
 //Capturando data atual
-function dataAtual()
-{
-	data = new Date();
-	document.getElementById('data').value = data.getDate() +'/'+ data.getMonth() +'/'+ data.getFullYear();
-	document.getElementById('horainicio').value = data.getHours() +':'+ data.getMinutes();
+function dataAtual() {
+    data = new Date();
+    document.getElementById('data').value = data.getDate() + '/' + data.getMonth() + '/' + data.getFullYear();
+    document.getElementById('horainicio').value = data.getHours() + ':' + data.getMinutes();
 }
 
 
 $.ajax({
-		 type: "GET",
-		 url: 'http://api.guarda.digital/api/Ocorrencia',
-		 data: 0,
-		 success: function(data)
-		 {
-		 	$('#ocorrencia').append('<option value="0">Selecione a Ocorrência</option>');
-		 	for(var i = 0; i < data.length; i++)
-		 	{
-		 		$('#ocorrencia').append('<option value="'+data[i].id+'">'+data[i].nome+'</option>');
-		 	}
-		 },
-		 dataType: "json"
-		});
+    type: "GET",
+    url: 'http://api.guarda.digital/api/Ocorrencia',
+    data: 0,
+    success: function (data) {
+        $('#ocorrencia').append('<option value="0">Selecione a Ocorrência</option>');
+        for (var i = 0; i < data.length; i++) {
+            $('#ocorrencia').append('<option value="' + data[i].id + '">' + data[i].nome + '</option>');
+        }
+    },
+    dataType: "json"
+});
 
-	$('#ocorrencia').change(function()
-	{
-		pegarId($('#ocorrencia').val());
-	});
+$('#ocorrencia').change(function () {
+    pegarId($('#ocorrencia').val());
+});
 
-function vazioOcorrencia()
-{
-	data: $('#data').val('');
-	local: $('#local').val('');
-	nome: $ ('#name').val('');
-	idade: $('#age').val('');
-	endereco: $('#address').val('');
-	qualidade: $('#qualidade').val('');
-	rg: $('#rg').val('');
-	descricao: $('#descricao').val('');
-	gm2: $('#gm2').val('');
-	horaInicio: $('#horainicio').val('');
-	horaTermino: $('#horaterm').val('');
-	email: $('#email').val('');
+function vazioOcorrencia() {
+    data: $('#data').val('');
+    local: $('#local').val('');
+    nome: $('#name').val('');
+    idade: $('#age').val('');
+    endereco: $('#address').val('');
+    qualidade: $('#qualidade').val('');
+    rg: $('#rg').val('');
+    descricao: $('#descricao').val('');
+    gm2: $('#gm2').val('');
+    horaInicio: $('#horainicio').val('');
+    horaTermino: $('#horaterm').val('');
+    email: $('#email').val('');
 }
 
-function vazioEnvolvido()
-{
-	nome: $ ('#name').val('');
-	idade: $('#age').val('');
-	qualidade: $('#qualidade').val('');
-	rg: $('#rg').val('');
+function vazioEnvolvido() {
+    nome: $('#name').val('');
+    idade: $('#age').val('');
+    qualidade: $('#qualidade').val('');
+    rg: $('#rg').val('');
 }
 
-function vazioGuarda()
-{
-	guarda: $('#gm2').val('');
+function vazioGuarda() {
+    guarda: $('#gm2').val('');
 }
 
 //Checked Sim ou não
-function capturarChecked(valor)
-{
-	if(valor == 1)
-		checkedEncerrado = true;
+function capturarChecked(valor) {
+    if (valor == 1)
+        checkedEncerrado = true;
 
-	if(valor == 2)
-		checkedConduzido = true;
+    if (valor == 2)
+        checkedConduzido = true;
 
-	if(valor == 3)
-		checkedApreensao = true;
+    if (valor == 3)
+        checkedApreensao = true;
 
-	if(valor == 4)
-		checkedRO = true;
+    if (valor == 4)
+        checkedRO = 0;
 
-	if(valor == 5)
-		checkedFlagrante = true;
+    if (valor == 5)
+        checkedFlagrante = true;
 
-	if(valor == 6)
-		checkedLacre = true;
+    if (valor == 6)
+        checkedLacre = 0;
 }
 
-function pegarId(id)
-{
-	$.ajax({
-			 type: "GET",
-			 url: 'http://api.guarda.digital/api/TipoOcorrencia/'+id,
-			 data: 0,
-			 beforeSend: function()
-			 {
-				$('#TipoOcorrencia').html('');
-			 },
-			 success: function(data)
-			 {
-			 	$('#TipoOcorrencia').append('<option value="0">Selecione o Tipo de Ocorrência</option>');
-			 	for(var i = 0; i < data.length; i++)
-			 	{
-			 		$('#TipoOcorrencia').append('<option value="'+data[i].id+'">'+data[i].nome+'</option>');
-			 	}
-			 },
-			 dataType: "json"
-			});
+function pegarId(id) {
+    $.ajax({
+        type: "GET",
+        url: 'http://api.guarda.digital/api/TipoOcorrencia/' + id,
+        data: 0,
+        beforeSend: function () {
+            $('#TipoOcorrencia').html('');
+        },
+        success: function (data) {
+            $('#TipoOcorrencia').append('<option value="0">Selecione o Tipo de Ocorrência</option>');
+            for (var i = 0; i < data.length; i++) {
+                $('#TipoOcorrencia').append('<option value="' + data[i].id + '">' + data[i].nome + '</option>');
+            }
+        },
+        dataType: "json"
+    });
 }
 
-function buscarGuarda()
-{
-	if($('#gm2').val() == "")
-			alert("Adicione a matrícula do guarda!");
+function buscarGuarda() {
+    if ($('#gm2').val() == "")
+        alert("Adicione a matrícula do guarda!");
 
-	else
-	{
-		$.ajax({
-			type: "GET",
-			url: 'http://api.guarda.digital/api/Guarda/'+ $('#gm2').val(),
-			data: 0,
-			success: function(data)
-			{
-				$('#receberGuarda').prepend('<div id="'+data.id+'" style="width:100%; text-align:center; margin-top: 10px;">'+data.nome+'</div>');
-				arrayGm2.push($('#gm2').val());
-				//alert(arrayGm2);
-			},
-			dataType: "json"
-		});
-	}
+    else {
+        $.ajax({
+            type: "GET",
+            url: 'http://api.guarda.digital/api/Guarda/' + $('#gm2').val(),
+            data: 0,
+            success: function (data) {
+                $('#receberGuarda').prepend('<div id="' + data.id + '" style="width:100%; text-align:center; margin-top: 10px;">' + data.nome + '</div>');
+                arrayGm2.push($('#gm2').val());
+                //alert(arrayGm2);
+            },
+            dataType: "json"
+        });
+    }
 }
 
-function adicionarEnvolvido()
-{
-	if($('#name').val() == "" || $('#age').val() == "" || $('#address').val() == "" || $('#rg').val() == "" || $('#qualidade :selected').text() == "Qualidade do envolvido (selecione)")
-			alert("Preencha todos os campos!");
+function adicionarEnvolvido() {
+    if ($('#name').val() == "" || $('#age').val() == "" || $('#address').val() == "" || $('#rg').val() == "" || $('#qualidade :selected').text() == "Qualidade do envolvido (selecione)")
+        alert("Preencha todos os campos!");
 
-	else
-	{
-		var envolvido = {
-		      "nome": $('#name').val(),
-		      "idade": parseInt($('#age').val()),
-		      "idQualidade": parseInt($('#qualidade').val()),
-		      "endereco": $('#endereco').val(),
-		      "rg": $('#rg').val()
-		    };
+    else {
+        var envolvido = {
+            "nome": $('#name').val(),
+            "idade": parseInt($('#age').val()),
+            "idQualidade": parseInt($('#qualidade').val()),
+            "endereco": $('#endereco').val(),
+            "rg": $('#rg').val()
+        };
 
-		    envolvidoArray.push(envolvido);
+        envolvidoArray.push(envolvido);
 
-		$('#receberEnvolvido').prepend('<div style="width:100%; text-align:center; margin-top: 10px; margin-bottom: 20px;"><div><b>Nome:</b> '+$('#name').val()+'</div><div style="width:100%; text-align:center; margin-top: 10px;"><b>Idade:</b> '+$('#age').val()+'</div><div style="width:100%; text-align:center; margin-top: 10px;"><b>Envolvido:</b> '+$('#qualidade :selected').text()+'</div><div style="width:100%; text-align:center; margin-top: 10px;"><b>Endereço:</b> '+$('#address').val()+'</div><div style="width:100%; text-align:center; margin-top: 10px;"><b>RG:</b> '+$('#rg').val()+'</div></div>');
+        $('#receberEnvolvido').prepend('<div style="width:100%; text-align:center; margin-top: 10px; margin-bottom: 20px;"><div><b>Nome:</b> ' + $('#name').val() + '</div><div style="width:100%; text-align:center; margin-top: 10px;"><b>Idade:</b> ' + $('#age').val() + '</div><div style="width:100%; text-align:center; margin-top: 10px;"><b>Envolvido:</b> ' + $('#qualidade :selected').text() + '</div><div style="width:100%; text-align:center; margin-top: 10px;"><b>Endereço:</b> ' + $('#address').val() + '</div><div style="width:100%; text-align:center; margin-top: 10px;"><b>RG:</b> ' + $('#rg').val() + '</div></div>');
 
-		vazioEnvolvido();
-	}
+        vazioEnvolvido();
+    }
 }
 
 /*function login(matricula, senha)
