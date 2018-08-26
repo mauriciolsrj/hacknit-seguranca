@@ -18,7 +18,7 @@ namespace GuardaDigital.Services
         {
             var apiKey = ConfigurationManager.AppSettings["sendGridApiKey"];
             var client = new SendGridClient(apiKey);
-            var from = new EmailAddress("contato@GD.com", "Nano");
+            var from = new EmailAddress("contato@vertice.digital", "Guarda Digital");
             var subject = message.Subject;
             var to = new EmailAddress(message.Destination);
             var plainTextContent = message.Body;
