@@ -226,10 +226,14 @@
       <script src="js/masonry.min.js"></script>
       <script src="js/chart.min.js"></script>
       <script src="js/functions.js"></script>
-
+      <link rel="stylesheet" href="js/jqueryui/jquery-ui.css" />
+      <script src="js/jqueryui/jquery-ui.js"></script>
       <script src="verificar.js"></script>
       <script>
-          dataAtual();
+          $(function()
+          {
+            $('#data').datepicker();
+          });
       </script>
   </body>
 </html>

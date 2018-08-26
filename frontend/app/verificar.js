@@ -70,13 +70,6 @@ $('#save').click(function () {
 		login($('#login'.val(), $('#login-psw').val());
 });*/
 
-//Capturando data atual
-function dataAtual() {
-    data = new Date();
-    document.getElementById('data').value = data.getDate() + '/' + data.getMonth() + '/' + data.getFullYear();
-    document.getElementById('horainicio').value = data.getHours() + ':' + data.getMinutes();
-}
-
 
 $.ajax({
     type: "GET",
