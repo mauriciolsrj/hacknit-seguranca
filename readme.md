@@ -47,5 +47,15 @@ Também utilizamos imagens do banco Freepik sob licença premium.
 ### Cloud Computing
 Web apps no Microsoft Azure
 
+### Créditos
+
+Desenvolvido durante o Hacknit 2018, créditos:
+
+Daniel Mattos - Empreendedor
+João Pedro - Desenvolvedor
+Julia Barbosa - Empreendedora
+Larissa Santos - Designer
+Maurício Santos - Desenvolvedor
+
 **Licença Livre!**
 
