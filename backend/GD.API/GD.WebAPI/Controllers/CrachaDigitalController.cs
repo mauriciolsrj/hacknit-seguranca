@@ -1,9 +1,10 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Net.Http.Headers;
-using System.Threading.Tasks;
+using System.Net;
+using System.Net.Http.Headers;   
 
 namespace GD.API.Controllers
 {
@@ -11,19 +12,44 @@ namespace GD.API.Controllers
     public class CrachaDigitalController : Controller
     {
         [HttpPost]
-        public async Task<IActionResult> QRCode(IList<IFormFile> files)
+        public IActionResult QRCode(IList<IFormFile> files)
         {
+            var msg = "";
+
             foreach (IFormFile source in files)
             {
-                string filename = ContentDispositionHeaderValue.Parse(source.ContentDisposition).FileName.Trim('"');
+                try
+                {
+                    string filename = ContentDispositionHeaderValue.Parse(source.ContentDisposition).FileName.Trim('"');
 
-                filename = this.EnsureCorrectFilename(filename);
+                    var name = Guid.NewGuid().ToString().Replace("-", "");
+                    var extensao = Path.GetExtension(filename);
 
-                using (FileStream output = System.IO.File.Create(this.GetPathAndFilename(filename)))
-                    await source.CopyToAsync(output);
+                    filename = Path.Combine(name, extensao);
+                    filename = this.EnsureCorrectFilename(filename);
+                    var tempFileName = filename;
+
+                    msg = filename;
+                    using (FileStream output = System.IO.File.Create(this.GetPathAndFilename(filename)))
+                        source.CopyTo(output);
+
+                    tempFileName = "qrcode.png";
+                    var urlQRCode = string.Format("http://api.qrserver.com/v1/read-qr-code/?fileurl=http://api.guarda.digital/uploads/{0}", tempFileName);
+
+                    using (var client = new WebClient())
+                    {
+                        var dados = client.DownloadString(urlQRCode);
+
+                        return Ok(dados);
+                    } 
+                }
+                catch (System.Exception ex)
+                {
+                    msg = ex.Message;
+                }
             }
 
-            return this.View();
+            return Ok(msg);
         }
 
         private string EnsureCorrectFilename(string filename)
@@ -36,7 +62,8 @@ namespace GD.API.Controllers
 
         private string GetPathAndFilename(string filename)
         {
-            return Path.Combine(@"D:\home\site\wwwroot\",@"uploads\",filename);
+            return Path.Combine(@"C:\Publish\log\", @"uploads\", filename);
+            //return Path.Combine(@"D:\home\site\wwwroot\", @"uploads\", filename);
         }
     }
 }
