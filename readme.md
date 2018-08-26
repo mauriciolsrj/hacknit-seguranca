@@ -10,9 +10,9 @@ Plataforma digital de licença livre que permite a digitalização do processo d
 
 # Conheça
 
-  Site: www.guarda.digital
-  Aplicativo: app.guarda.digital
-  API: api.guarda.digital
+  - Site: www.guarda.digital
+  - Aplicativo: app.guarda.digital
+  - API: api.guarda.digital
 
 
 Você também pode:
@@ -59,3 +59,10 @@ Maurício Santos - Desenvolvedor
 
 **Licença Livre!**
 
+![Georreferenciamento](http://guarda.digital/prints/mapa2.png)
+![Georreferenciamento](http://guarda.digital/prints/mapa1.png)
+![APP](http://guarda.digital/prints/app1.png)
+![APP](http://guarda.digital/prints/app2.png)
+![APP](http://guarda.digital/prints/app3.png)
+![APP](http://guarda.digital/prints/site.png)
+![APP](http://guarda.digital/prints/API.png)
