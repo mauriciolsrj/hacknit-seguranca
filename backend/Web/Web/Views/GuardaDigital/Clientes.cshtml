@@ -3,7 +3,7 @@
     ViewBag.Title = "Usuários";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<div class="container">
+
 <h2 class="m-l-20">Usuários</h2>
 
 
@@ -29,12 +29,11 @@
             </div>
         </section>
 </div>
-</div>
 <script type="text/javascript">
     $(document).ready(function () {
         $('#datatables').DataTable({
             "ajax": {
-                "url": "/guardadigital/datatablesUsuarios",
+                "url": "/GuardaDigital/datatablesClientes",
                 "type": "GET"
             },
             "language": {
@@ -47,17 +46,17 @@
             'buttons': [
                      {
                          "extend": 'copy',
-                    text: '<i class="glyphicon glyphicon-plus"></i> Copiar',
+                         text: '<i class="fa fa-copy"></i> Copiar',
                          className: 'btn btn-info btn-round btn-sm m-r-10'
                      },
                      {
                          "extend": 'excel',
-                         text: '<i class="glyphicon glyphicon-export"></i> Excel',
+                         text: '<i class="fa fa-file-excel-o"></i> Excel',
                          className: 'btn btn-info btn-round btn-sm  m-r-10'
                      },
                      {
                          "extend": 'print',
-                         text: '<i class="glyphicon glyphicon-print"></i> Imprimir',
+                         text: '<i class="fa fa-print"></i> Imprimir',
                          className: 'btn btn-info btn-round btn-sm  m-r-10'
                      }
             ],

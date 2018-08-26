@@ -3,12 +3,14 @@
     ViewBag.Title = "Contratos";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<div class="container">
 
 <h2 class="m-l-20">Ocorrências</h2>
 
 
 <div class="row">
         <section class="panel">
+          
             <div class="panel-body">
                 <table data-page-length='10' id="datatables" class="display table table-bordered table-hover">
                     <thead>
@@ -25,6 +27,7 @@
             </div>
         </section>
 </div>
+</div>
 <script type="text/javascript">
     $(document).ready(function () {
         $('#datatables').DataTable({
@@ -40,21 +43,21 @@
             "info": true,
             'dom': 'Blfrtip',
             'buttons': [
-                {
-                    "extend": 'copy',
+                     {
+                         "extend": 'copy',
                     text: '<i class="glyphicon glyphicon-plus"></i> Copiar',
-                    className: 'btn btn-info btn-round btn-sm m-r-10'
-                },
-                {
-                    "extend": 'excel',
-                    text: '<i class="glyphicon glyphicon-export"></i> Excel',
-                    className: 'btn btn-info btn-round btn-sm  m-r-10'
-                },
-                {
-                    "extend": 'print',
-                    text: '<i class="glyphicon glyphicon-print"></i> Imprimir',
-                    className: 'btn btn-info btn-round btn-sm  m-r-10'
-                }
+                         className: 'btn btn-info btn-round btn-sm m-r-10 m-b-20'
+                     },
+                     {
+                         "extend": 'excel',
+                         text: '<i class="glyphicon glyphicon-export"></i> Excel',
+                         className: 'btn btn-info btn-round btn-sm  m-r-10 m-b-20'
+                     },
+                     {
+                         "extend": 'print',
+                         text: '<i class="glyphicon glyphicon-print"></i> Imprimir',
+                         className: 'btn btn-info btn-round btn-sm  m-r-10 m-b-20'
+                     }
             ],
             "deferRender": true,
             "serverSide": true,

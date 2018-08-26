@@ -23,3 +23,5 @@ backend/Web/GD.Entity/obj/
 backend/Web/GD.Entity/bin/
 backend/Web/packages/
 backend/Web/Web/bin/
+*.out
+*.cache

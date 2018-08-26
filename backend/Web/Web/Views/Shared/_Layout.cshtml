@@ -1,5 +1,5 @@
-﻿<!DOCTYPE html>
-<html>
+﻿<!DOCTYPE html >
+<html lang="pt-br">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,14 +28,14 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-               @Html.ActionLink("Guarda Digital", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Guarda Digital", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Usuários", "Usuarios", "GuardaDigital")</li>
-                    <li>@Html.ActionLink("Tipos de Ocorrência", "TipoOcorrencias", "GuardaDigital")</li>
-                    <li>@Html.ActionLink("Ocorrências", "Ocorrencias", "GuardaDigital")</li>
+                    <li>@Html.ActionLink("Usuários", "Usuarios", "guardadigital")</li>
+                    <li>@Html.ActionLink("Ocorrências", "ocorrencias", "guardadigital")</li>
+                    <li>@Html.ActionLink("Tipos de Ocorrências", "tipoocorrencias", "guardadigital")</li>
                     <li>@Html.ActionLink("Mapa", "Map", "Home")</li>
                     <li>@Html.ActionLink("Sobre nós", "About", "Home")</li>
                     <li>@Html.ActionLink("Contato", "Contact", "Home")</li>
@@ -44,13 +44,8 @@
             </div>
         </div>
     </div>
-    <div class="container body-content">
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - Guarda Digital | Todos os direitos reservados</p>
-        </footer>
-    </div>
+       
 
 
 </body>
