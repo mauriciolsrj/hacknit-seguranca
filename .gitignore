@@ -25,3 +25,5 @@ backend/Web/packages/
 backend/Web/Web/bin/
 *.out
 *.cache
+backend/Web/Web/obj/
+backend/Web/GD.Infrastructure.Context.EF/obj/
