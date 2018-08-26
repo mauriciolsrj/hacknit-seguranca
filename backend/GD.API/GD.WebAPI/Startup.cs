@@ -29,10 +29,10 @@ namespace GD.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new Info { Title = "Guarda Digital API", Version = "v1" });
-            });
+            //services.AddSwaggerGen(c =>
+            //{
+            //    c.SwaggerDoc("v1", new Info { Title = "Guarda Digital API", Version = "v1" });
+            //});
 
             var connection = @"Server=hackinrio.database.windows.net;Database=hacknit;User=hackingriodesafiofintech;Password=Fs8GVcQc5yWWW6vx";
             services.AddDbContext<GuardaDigitalContext>(options => options.UseSqlServer(connection));
@@ -45,13 +45,13 @@ namespace GD.API
 
             app.UseMvc();
 
-            app.UseSwagger();
-            app.UseSwaggerUI(c =>
-            {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Guarda Digital API V1");
-            });
+            //app.UseSwagger();
+            //app.UseSwaggerUI(c =>
+            //{
+            //    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Guarda Digital API V1");
+            //});
 
-            app.Run(async (context) => await Task.Run(() => context.Response.Redirect("/swagger")));
+            //app.Run(async (context) => await Task.Run(() => context.Response.Redirect("/swagger")));
         }
     }
 }

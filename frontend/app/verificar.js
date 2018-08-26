@@ -17,8 +17,6 @@ $('#save').click(function () {
             "registro": {
                 "idOcorrencia": parseInt($('#ocorrencia').val()),
                 "idTipoOcorrencia": parseInt($('#TipoOcorrencia').val()),
-                "latitude": 0,
-                "longitude": 0,
                 "inicio": $('#data').val(),
                 "endereco": $('#address').val(),
                 "historicoOcorrencia": $('#descricao').val(),
@@ -199,24 +197,3 @@ function adicionarEnvolvido() {
         vazioEnvolvido();
     }
 }
-
-/*function login(matricula, senha)
-{
-	$.ajax({
-		type: "GET",
-		url: 'porcessar',
-		data: 0,
-		success: function(data)
-		{
-			if(data.matricula == matricula && data.senha == senha)
-			{
-				alert("Acesso permitido!");
-				window.open('index.html');
-			}
-
-			else
-				alert("Acesso negato!");
-		},
-		dataType: 'json'
-	});
-}*/

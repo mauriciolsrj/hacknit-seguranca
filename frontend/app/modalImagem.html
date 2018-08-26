@@ -94,12 +94,8 @@
                          $('#fileUpload').change(function (event) {
                              form = new FormData();
                              form.append('files', event.target.files[0]);
-                         });
-
-                         $('#btnEnviar').click(function () {
                              $.ajax({
-                                 //url: 'http://api.guarda.digital/api/CrachaDigital', 
-                                 url: 'http://localhost:5000/api/CrachaDigital',
+                                 url: 'http://api.guarda.digital/api/CrachaDigital', 
                                  data: form,
                                  processData: false,
                                  contentType: false,
@@ -108,7 +104,7 @@
                                      alert(data);
                                  }
                              });
-                         });
+                         }); 
                      });
                  </script>
             </div>
@@ -122,9 +118,6 @@
     </div>
     <!-- End of Page Contents -->
     </div><!-- End of Main Container -->
-
-
-
     <script src="js/jquery.swipebox.min.js"></script>
     <script src="js/materialize.min.js"></script>
     <script src="js/swiper.min.js"></script>
@@ -132,7 +125,6 @@
     <script src="js/masonry.min.js"></script>
     <script src="js/chart.min.js"></script>
     <script src="js/functions.js"></script>
-
     <script src="verificar.js"></script>
 </body>
 </html>
