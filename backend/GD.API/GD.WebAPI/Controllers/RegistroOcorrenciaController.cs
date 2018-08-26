@@ -81,7 +81,7 @@ namespace GD.API.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest("Error while creating");
+                return BadRequest(ex.Message.ToString());
             }
             return Ok(item);
         }
