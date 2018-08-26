@@ -64,5 +64,7 @@ Maurício Santos - Desenvolvedor
 ![APP](http://guarda.digital/prints/app1.png)
 ![APP](http://guarda.digital/prints/app2.png)
 ![APP](http://guarda.digital/prints/app3.png)
+![APP](http://guarda.digital/prints/695x695joao.png)
+![APP](http://guarda.digital/prints/joao.png)  
 ![APP](http://guarda.digital/prints/site.png)
 ![APP](http://guarda.digital/prints/API.png)
