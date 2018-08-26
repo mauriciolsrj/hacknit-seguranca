@@ -3068,14 +3068,14 @@ fieldset[disabled] a.btn {
   border-color: #ccc;
 }
 .btn-facebook  {
-    padding:5px 110px;
+    padding:5px 30px;
     color:#fff;
     background-color:#337ab7;
     border-radius:5px;
     margin-bottom:20px;
 }
 .btn-facebook:hover {
-    padding: 5px 110px;
+    padding: 5px 30px;
     color: #fff;
     background-color: #337ab7;
     border-radius: 5px;
@@ -3468,13 +3468,24 @@ fieldset[disabled] .btn-link:focus {
   line-height: 1.5;
   border-radius: 3px;
 }
-.dataTables_length {
+.dt-buttons a {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.dataTables_length{
     padding-top:20px;
     float:left;
 }
 .dataTables_length select {
     padding: 8px 10px;
+    margin-top:10px;
+    margin-bottom:10px;
 }
+.dataTables_length label {
+  padding:5px 10px;
+  float: left;
+} 
+
 .dataTables_filter {
     float: right;
     padding-top: 22px;
@@ -3483,13 +3494,12 @@ fieldset[disabled] .btn-link:focus {
     margin-left: 10px;
     padding: 5px 20px;
 }
-.dataTables_info {
-    text-align:right;
-}
 .dataTables_paginate a {
     padding: 5px 10px;
-    border: 1px solid #ddd;
-    margin-top: 10px;
+    border: 1px solid #666;
+}
+.dataTables_info {
+  float: right;
 }
 .btn-xs,
 .btn-group-xs > .btn {
@@ -4667,7 +4677,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
 .navbar-inverse .navbar-nav > .active > a:hover,
 .navbar-inverse .navbar-nav > .active > a:focus {
   color: #fff;
-  background-color: #080808;
+  background-color: #061093;
 }
 .navbar-inverse .navbar-nav > .disabled > a,
 .navbar-inverse .navbar-nav > .disabled > a:hover,
@@ -4687,20 +4697,20 @@ fieldset[disabled] .navbar-default .btn-link:focus {
 }
 .navbar-inverse .navbar-collapse,
 .navbar-inverse .navbar-form {
-  border-color: #101010;
+  border-color: #061093;
 }
 .navbar-inverse .navbar-nav > .open > a,
 .navbar-inverse .navbar-nav > .open > a:hover,
 .navbar-inverse .navbar-nav > .open > a:focus {
   color: #fff;
-  background-color: #080808;
+  background-color: #061093;
 }
 @media (max-width: 767px) {
   .navbar-inverse .navbar-nav .open .dropdown-menu > .dropdown-header {
-    border-color: #080808;
+    border-color: #061093;
   }
   .navbar-inverse .navbar-nav .open .dropdown-menu .divider {
-    background-color: #080808;
+    background-color: #061093;
   }
   .navbar-inverse .navbar-nav .open .dropdown-menu > li > a {
     color: #9d9d9d;
@@ -4714,7 +4724,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:hover,
   .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:focus {
     color: #fff;
-    background-color: #080808;
+    background-color: #061093;
   }
   .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a,
   .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a:hover,
